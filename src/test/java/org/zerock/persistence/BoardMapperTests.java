@@ -49,5 +49,11 @@ public class BoardMapperTests {
 		log.info(board);
 	}
 	
+	// 삭제 성공 시 1 리턴	
+	@Test
+	public void testDelete() {
+		log.info("Delete Count : " + mapper.delete(3L));
+	}
+	
 	
 }
