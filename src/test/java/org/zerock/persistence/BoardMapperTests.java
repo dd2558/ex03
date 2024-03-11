@@ -45,7 +45,7 @@ public class BoardMapperTests {
 	
 	@Test
 	public void testread() {
-		BoardVO board = mapper.read(5L);
+		BoardVO board = mapper.read(5L); // 읽고싶은 번호
 		log.info(board);
 	}
 	
@@ -58,13 +58,13 @@ public class BoardMapperTests {
 	@Test
 	public void testUpdate() {
 		BoardVO board = new BoardVO();
-		board.setBno(5L);
+		board.setBno(5L); // 수정할 번호
 		board.setTitle("수정된 제목");
 		board.setContent("수정된 내용");
 		board.setWriter("user000");
 		
 		int count = mapper.update(board);
-		log.info("Update Count : " + count);
+		log.info("Update Count : " + count); // 성공시 1리턴 수정 실패시 0
 	}
 	
 	
