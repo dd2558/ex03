@@ -30,14 +30,18 @@ public class BoardServiceTests {
 	public void testRegister() {
 		
 	BoardVO board = new BoardVO();
-	board.setTitle("새로 작성하는글");
-	board.setContent("새로 작성하는 내용");
-	board.setWriter("newbie");
+	board.setTitle("새로 작성하는글 ser");
+	board.setContent("새로 작성하는 내용 ser");
+	board.setWriter("newbie ser");
 	
 	service.register(board);
 	log.info("생성된 게시물의 번호: " + board.getBno() );
 	}
 	
+	@Test
+	public void testGetList() { // 작성된 리스트 반환
+		service.getList().forEach(board->log.info(board));
+	}
 	
 	
 }
