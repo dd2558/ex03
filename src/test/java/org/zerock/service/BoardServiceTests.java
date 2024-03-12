@@ -2,6 +2,8 @@ package org.zerock.service;
 
 import static org.junit.Assert.assertNotNull;
 
+import java.lang.ProcessHandle.Info;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -43,5 +45,9 @@ public class BoardServiceTests {
 		service.getList().forEach(board->log.info(board));
 	}
 	
+	@Test
+	public void testGet() {
+		log.info(service.get(1L));
+	}
 	
 }
