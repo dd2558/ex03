@@ -56,5 +56,15 @@ public class BoardServiceTests {
 		log.info("Remove Result = " + service.remove(2L));
 	}
 	
+	@Test
+	public void testUpdate() {
+		BoardVO board = service.get(1L);
+		if(board == null) {
+			return;
+		}
+			
+		board.setTitle("제목을 수정합니다");
+		log.info("Modify Result : " + service.modify(board));
+	}
 	
 }
