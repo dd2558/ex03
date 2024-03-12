@@ -50,4 +50,11 @@ public class BoardServiceTests {
 		log.info(service.get(1L));
 	}
 	
+	@Test
+	public void testDelete() {
+		//게시물 번호 존재 여부 확인
+		log.info("Remove Result = " + service.remove(2L));
+	}
+	
+	
 }
