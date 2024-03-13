@@ -77,5 +77,15 @@ public class BoardControllerTest {
     	log.info(resultPage);
     }
     
+    @Test
+    public void testRemove() throws Exception{
+    	//삭제전 번호확인
+    	String resultPage= mockMvc.perform(MockMvcRequestBuilders.post("/board/remove")
+    			.param("bno", "4")
+    			).andReturn().getModelAndView().getViewName();
+    	
+    	log.info(resultPage);
+    	
+    }
     
 }
