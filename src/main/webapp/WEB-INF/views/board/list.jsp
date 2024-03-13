@@ -53,5 +53,7 @@
                 <!-- /.col-lg-6 -->
             </div>
             <!-- /.row -->
+               </div>
+    <!-- /#wrapper -->
             
 <%@include file ="../includes/footer.jsp" %> <!-- 잘라간 부분 연결 -->
