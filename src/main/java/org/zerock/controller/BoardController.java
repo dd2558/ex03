@@ -41,5 +41,14 @@ public class BoardController {
 		model.addAttribute("board",service.get(bno));
 	}
 	
+	@PostMapping("/modify")
+	public String modify(BoardVO board, RedirectAttributes rttr) {
+		log.info("modify:" + board);
+		//성공시 list로 반환시키기
+		if(service.modify(board)) {
+			rttr.addFlashAttribute("result","success");
+		}
+		return "redirect:/board/list";
+	}
 	
 }
