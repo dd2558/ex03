@@ -50,5 +50,14 @@
  	<!-- /.col-lg-6-->
 </div>
 
+<script>
+	window.onpageshow = function(event) { //글쓰고 뒤로가면 새로고침
+		//back 이벤트 일 경우
+		if (event.persisted) {
+			location.reload(true);
+		}
+
+	}
+</script>
 
 <%@include file="../includes/footer.jsp"%>
