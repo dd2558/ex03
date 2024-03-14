@@ -23,7 +23,7 @@
   </insert>
   
   <select id="read" resultType="org.zerock.domain.BoardVO">
-  	select bno,title,content,writer from tbl_board where bno =#{bno}
+  	select bno,title,content,writer, regdate, updateDate from tbl_board where bno =#{bno}
   </select>
   
   <delete id="delete">
