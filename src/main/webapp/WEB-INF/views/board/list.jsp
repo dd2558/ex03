@@ -10,6 +10,7 @@
 	<div class="row">
 		<div class="col-lg-12">
 			<h1 class="page-header">Board List Page</h1>
+			<button id="regBtn" type="button" class="btn btn-xs pull-right">Register New Board</button>
 		</div>
 		<!-- /.col-lg-12 -->
 	</div>
@@ -93,6 +94,10 @@
          				}
          				$("#myModal").modal("show");
          			}
+					$("#regBtn").on("click",function(){
+						self.location ="/board/register";
+					});					         			
+         			
          		});
          </script>
 
