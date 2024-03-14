@@ -85,7 +85,7 @@
          			
          			checkModal(result);
          			
-         			history.replaceState({},null,null);
+         			history.replaceState({},null,null); // history 삭제
          			
          			function checkModal(result){
          				if(result==='' || history.state){
