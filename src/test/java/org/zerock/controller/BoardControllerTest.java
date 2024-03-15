@@ -14,6 +14,8 @@ import org.springframework.web.context.WebApplicationContext;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.setup.MockMvcBuilders.webAppContextSetup;
 
+import org.apache.ibatis.annotations.Param;
+
 import lombok.extern.log4j.Log4j;
 
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -34,13 +36,13 @@ public class BoardControllerTest {
     }
 
     @Test
-    public void testList() throws Exception {
+    public void testListPaging() throws Exception {
 
         log.info(
-                mockMvc.perform(get("/board/list"))
-                        .andReturn()
-                        .getModelAndView()
-                        .getModelMap());
+                mockMvc.perform(MockMvcRequestBuilders.get("/board/list")
+                .param("pageNum","2")
+                .param("amount","50"))
+                .andReturn().getModelAndView().getModelMap());
     }
     
     @Test
