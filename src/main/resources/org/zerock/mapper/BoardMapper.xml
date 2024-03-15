@@ -13,7 +13,7 @@
   <![CDATA[
     select bno,title,writer,regdate,updateDate from(
     	select /*+INDEX_DESC(tbl_board)*/
-    	rownum rn, bno,title,content,writer,regdate,updateDate from tbl_board where rownum <=20)
+    	rownum rn, bno,title,content,writer,regdate,updateDate from tbl_board where rownum <=20
     ) where rn>10
     ]]>
   </select>
