@@ -37,7 +37,8 @@
 						<c:forEach items="${list }" var="board">
 							<tr>
 								<td><c:out value="${board.bno }" /></td>
-								<td><a href='/board/get?bno=<c:out value="${board.bno }"/>'><c:out value="${board.title }" /></a></td>
+								<td><a class="move" href="/board/get?bno=${board.bno}">
+								<c:out value="${board.title }" /></a></td>
 								<td><c:out value="${board.writer }" /></td>
 								<td><fmt:formatDate pattern="yyyy-MM-dd"
 										value="${board.regdate }" /></td>
@@ -56,7 +57,7 @@
 						
 						<c:forEach var="num" begin="${pageMaker.startPage }"
 						end = "${pageMaker.endPage }">
-						<li class="paginate_button ${pageMaker.cri.pageNum==num? "active":"" }">
+						<li class="paginate_button ${pageMaker.cri.pageNum==num? "active":""}">
 							<a href="${num }">${num }</a></li>
 						</c:forEach>
 						
@@ -131,6 +132,13 @@
 						console.log('click');
 						actionForm.find("input[name='pageNum']").val($(this).attr("href"));
 						actionForm.submit();
+					});
+					$(".move").on("click", function(e) {
+					    e.preventDefault();
+					    var bnoValue = $(this).attr("href").split("=")[1]; // href 속성에서 bno 값 추출
+					    actionForm.append("<input type='hidden' name='bno' value='" + bnoValue + "'>");
+					    actionForm.attr("action", "/board/get")
+					    actionForm.submit();
 					});
          			
          		});
